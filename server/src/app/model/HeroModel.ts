@@ -2,9 +2,9 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 
-import IHeroModel = require('./interfaces/HeroModel');
+import { IHeroModel } from "./interfaces/HeroModel";
 
-class HeroModel {
+export class HeroModel {
 
     private _heroModel: IHeroModel;
 
@@ -22,7 +22,6 @@ class HeroModel {
     get amountPeopleSaved (): number {
         return this._heroModel.amountPeopleSaved;
     }
-    
+
 }
 Object.seal(HeroModel);
-export =  HeroModel;

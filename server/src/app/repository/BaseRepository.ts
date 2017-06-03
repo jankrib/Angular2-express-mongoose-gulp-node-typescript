@@ -2,18 +2,19 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 
-import IRead = require("./interfaces/Read");
-import IWrite = require("./interfaces/Write");
-import IHeroModel = require("./../model/interfaces/HeroModel");
+import { IRead } from "./interfaces/Read";
+import { IWrite } from "./interfaces/Write";
+import { IHeroModel } from "./../model/interfaces/HeroModel";
+import { ISchema } from "./../dataAccess/schemas/ISchema";
 
-import mongoose = require("mongoose");
+import { mongoose } from "mongoose";
 
-class RepositoryBase<T extends mongoose.Document> implements IRead<T>, IWrite<T> {
+export class RepositoryBase<T extends mongoose.Document> implements IRead<T>, IWrite<T> {
 
     private _model: mongoose.Model<mongoose.Document>;
 
-    constructor (schemaModel: mongoose.Model<mongoose.Document>) {
-        this._model = schemaModel;
+    constructor (schema: ISchema) {
+        this._model = schema.getModel();
     }
 
     create (item: T, callback: (error: any, result: any) => void) {
@@ -45,5 +46,3 @@ class RepositoryBase<T extends mongoose.Document> implements IRead<T>, IWrite<T>
     }
 
 }
-
-export = RepositoryBase;

@@ -2,12 +2,12 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 
-import Mongoose = require("mongoose");
-import Constants = require("./../../config/constants/constants");
+import {Mongoose} from "mongoose";
+import {Constants} from "./../../config/constants/constants";
 
-class DataAccess {
-    static mongooseInstance: any;
-    static mongooseConnection: Mongoose.Connection;
+export class DataAccess {
+    public static mongooseInstance: any;
+    public static mongooseConnection: Mongoose.Connection;
 
     constructor () {
         DataAccess.connect();
@@ -27,4 +27,3 @@ class DataAccess {
 }
 
 DataAccess.connect();
-export = DataAccess;

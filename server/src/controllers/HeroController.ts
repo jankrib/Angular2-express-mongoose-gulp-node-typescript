@@ -1,13 +1,10 @@
-/**
- * Created by Moiz.Kachwala on 15-06-2016.
- */
 
-import express = require("express");
-import HeroBusiness = require("./../app/business/HeroBusiness");
-import IBaseController = require("./BaseController");
-import IHeroModel = require("./../app/model/interfaces/HeroModel");
+import { express} from "express";
+import { HeroBusiness} from "./../app/business/HeroBusiness";
+import { IBaseController} from "./BaseController";
+import { IHeroModel} from "./../app/model/interfaces/HeroModel";
 
-class HeroController implements IBaseController <HeroBusiness> {
+export class HeroController implements IBaseController <HeroBusiness> {
 
     create(req: express.Request, res: express.Response): void {
         try {
@@ -89,4 +86,3 @@ class HeroController implements IBaseController <HeroBusiness> {
         }
     }
 }
-export = HeroController;

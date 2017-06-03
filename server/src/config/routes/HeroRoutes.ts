@@ -2,11 +2,11 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 
-import express = require("express");
-import HeroController = require("./../../controllers/HeroController");
+import {express} from "express";
+import {HeroController} from "./../../controllers/HeroController";
 
 var router = express.Router();
-class HeroRoutes {
+export class HeroRoutes {
     private _heroController: HeroController;
 
     constructor () {
@@ -28,4 +28,3 @@ class HeroRoutes {
 }
 
 Object.seal(HeroRoutes);
-export = HeroRoutes;

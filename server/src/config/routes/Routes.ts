@@ -1,20 +1,18 @@
 /**
  * Created by Moiz.Kachwala on 15-06-2016.
  */
-import express = require('express');
-import path = require('path');
+import {express} from 'express';
 
-import HeroRoutes = require('../routes/HeroRoutes');
+import {HeroRoutes} from '../routes/HeroRoutes';
 
 var app = express();
 
-class Routes {
+export class Routes {
 
     get routes() {
 
         app.use("/", new HeroRoutes().routes);
-        
+
         return app;
     }
 }
-export = Routes;

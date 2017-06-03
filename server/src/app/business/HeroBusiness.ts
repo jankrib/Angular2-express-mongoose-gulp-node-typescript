@@ -2,13 +2,13 @@
  * Created by Moiz.Kachwala on 15-06-2016.
  */
 
-import HeroRepository = require("./../repository/HeroRepository");
-import IHeroBusiness = require("./interfaces/HeroBusiness");
-import IHeroModel = require("./../model/interfaces/HeroModel");
-import HeroModel = require("./../model/HeroModel");
+import {HeroRepository} from "./../repository/HeroRepository";
+import {IHeroBusiness} from "./interfaces/HeroBusiness";
+import {IHeroModel} from "./../model/interfaces/HeroModel";
+import {HeroModel} from "./../model/HeroModel";
 
 
-class HeroBusiness implements IHeroBusiness {
+export class HeroBusiness implements IHeroBusiness {
     private _heroRepository: HeroRepository;
 
     constructor () {
@@ -46,4 +46,3 @@ class HeroBusiness implements IHeroBusiness {
 
 
 Object.seal(HeroBusiness);
-export = HeroBusiness;

@@ -3,11 +3,9 @@
  */
 
 import express = require("express");
-interface WriteController {
+export interface IWriteController {
     create: express.RequestHandler;
     update: express.RequestHandler;
     delete: express.RequestHandler;
 
 }
-
-export = WriteController;

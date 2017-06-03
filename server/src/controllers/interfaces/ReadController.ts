@@ -3,10 +3,8 @@
  */
 
 import express = require("express");
-interface ReadController {
+export interface IReadController {
     retrieve: express.RequestHandler;
     findById: express.RequestHandler;
 
-
 }
-export = ReadController;
