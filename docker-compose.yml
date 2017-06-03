@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  db:
+    image: "mongo:3.4.4"
+    expose:
+      - "27017"
+  web:
+    build: .
+    volumes:
+      - ".:/src"
+    environment:
+      NODE_ENV: development
+    ports:
+      - "3000:3000"
+    links:
+      - db

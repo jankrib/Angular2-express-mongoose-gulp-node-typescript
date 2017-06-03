@@ -13,13 +13,20 @@ const gulp = require("gulp"),
     tslint = require('gulp-tslint'),
     concat = require('gulp-concat'),
     runSequence = require('run-sequence'),
-    nodemon = require('gulp-nodemon');
+    nodemon = require('gulp-nodemon'),
+    install = require('gulp-install');
+
 
 /**
  * Remove build directory.
  */
 gulp.task('clean', (cb) => {
     return del(["dist"], cb);
+});
+
+gulp.task('installDependencies', function() {
+    gulp.src(['./package.json'])
+      .pipe(install());
 });
 
 /**
@@ -136,7 +143,7 @@ gulp.task('start', function () {
  */
 
 gulp.task("build", function (callback) {
-    runSequence('clean', 'build:server', 'build:client', 'clientResources', 'serverResources', 'libs', 'css', callback);
+    runSequence('clean', 'installDependencies', 'build:server', 'build:client', 'clientResources', 'serverResources', 'libs', 'css', callback);
 });
 
 /**
