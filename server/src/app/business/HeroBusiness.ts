@@ -29,7 +29,7 @@ class HeroBusiness implements IHeroBusiness {
             if(err)
               callback(err, res);
             else
-                this._heroRepository.update(_id, item, callback);
+                this._heroRepository.update(res._id, item, callback);
 
         });
     }
