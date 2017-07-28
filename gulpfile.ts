@@ -124,7 +124,7 @@ gulp.task('start', function () {
         script: 'dist/server/bin/www'
         , ext: 'html js'
         , ignore: ['ignored.js']
-        , tasks: ['tslint']
+        //, tasks: ['tslint']
     })
         .on('restart', function () {
             console.log('restarted!');
