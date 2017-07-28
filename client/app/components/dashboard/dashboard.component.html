@@ -1,8 +1,8 @@
 <h3>Top Heroes</h3>
 <div class="row">
-    <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-md-3">
+    <div *ngFor="let hero of heroes" class="col-md-3">
         <div class="module hero">
-            <h4>{{hero.name}}</h4>
+            <a md-raised-button (click)="gotoDetail(hero)">{{hero.name}}</a>
         </div>
     </div>
 </div>

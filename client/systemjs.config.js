@@ -22,7 +22,10 @@ var isPublic = typeof window != "undefined";
     'platform-browser-dynamic',
     'router',
     'router-deprecated',
-    'upgrade'
+    'upgrade',
+    'material',
+    'cdk',
+    'animations'
   ];
   // Individual files (~300 requests):
   function packIndex(pkgName) {
