@@ -2,7 +2,8 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule }     from '@angular/http';
-import { MdButtonModule } from '@angular/material';
+import { MdButtonModule, MdListModule, MdTabsModule, MdInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent }  from './app.component';
 import { routing }       from './app.routing';
@@ -19,6 +20,10 @@ import { HeroService }  from './services/hero.service';
     HttpModule,
     FormsModule,
     MdButtonModule,
+    MdListModule,
+    MdInputModule,
+    MdTabsModule,
+    BrowserAnimationsModule,
     routing
     ],
   declarations: [

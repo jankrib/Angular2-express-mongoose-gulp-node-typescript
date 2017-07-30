@@ -10,7 +10,9 @@ var isPublic = typeof window != "undefined";
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
-    'rxjs':                       { defaultExtension: 'js' }
+    'rxjs':                       { defaultExtension: 'js' },
+    '@angular/platform-browser/animations': { main: '../bundles/platform-browser-animations.umd.js', defaultExtension: 'js' },
+    '@angular/animations/browser': { main: '../bundles/animations-browser.umd.js', defaultExtension: 'js' }
   };
   var ngPackageNames = [
     'common',
